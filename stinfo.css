@@ -1,0 +1,117 @@
+/* Estilo general */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #333;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    background: url('imgBanerINICIO/Infovaca.jpg') repeat;
+    background-size: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.6; /* Opacidad de la imagen de fondo */
+}
+
+/* Estilo del encabezado */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #53640f;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.logo img {
+    height: 120px;
+}
+
+.company-name {
+    font-size: 1.5em;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 15px 20px;
+    border-radius: 15px;
+    transition: background 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background: #ffffff;
+    color: #53640f;
+}
+
+/* Estilo de las secciones */
+.hero, .info, .contact-info, .additional-content {
+    background-color: rgba(20, 20, 20, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    margin: 30px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+    width: 67%;
+    text-align: center;
+}
+
+.hero h1, .info h2, .contact-info h2, .additional-content h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+}
+
+.hero p, .info p, .contact-info p, .additional-content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+/* Estilo del pie de página */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #53640f;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    z-index: 1;
+}
+
+footer p {
+    margin: 5px 0;
+}
+
+footer a {
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #aaa;
+}
+

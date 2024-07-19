@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bienvenida</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+
+        .membership-welcome {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            background-color: #fff;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .membership-welcome h1 {
+            font-size: 2.5em;
+            margin: 0;
+            color: #333;
+        }
+
+        .membership-welcome p {
+            font-size: 1.2em;
+            color: #666;
+        }
+
+        .membership-type {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #337ab7;
+        }
+
+        /* Animation styles */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="membership-welcome">
+        <h1>Bienvenido al modo MEDIUM</h1>
+        <p>Sus beneficios:</p>
+        <ul class="benefits">
+            <p><strong>Compra y Venta de Ganado</strong></p>
+            <p><strong>Noticias y Anuncios</strong></p>
+            <p><strong>Promociones y Ofertas</strong></p>
+            <p><strong>Acceso a la tienda de Medicamentos Veterinarios</strong></p>
+        </ul>
+        <p>Estamos procesando su solicitud...</p>
+    </div>
+
+    <script>
+       
+        const membershipType = 'MEDIUM'; 
+
+        
+        const redirectUrl = 'products2.html';
+
+        
+        setTimeout(function() {
+            window.location.href = redirectUrl;
+        }, 6000);
+    </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio</title>
+    <link rel="stylesheet" href="stylemode.css">
+    <style>
+        /* Estilos para la pantalla emergente */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            text-align: center;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .modal-header {
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .modal-button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .close-button {
+            background-color: #ccc;
+            color: #000;
+        }
+
+        .close-button:hover {
+            background-color: #aaa;
+            transform: scale(1.1);
+        }
+
+        .get-button {
+            background-color: #4CAF50;
+            color: #fff;
+        }
+
+        .get-button:hover {
+            background-color: #45a049;
+            transform: rotate(10deg);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+
+            
+            <h1>Bienvenido a <mark style="background-color: #53640f0e; color: #53640fdc;">MIL AGRO S.A</mark></h1>
+            <p>Seleccione su tipo de usuario</p>
+                        
+
+        <main class="main-content">
+            <div class="button-container">
+                <a href="Membresias.html" class="btn btn-basic" id="basic-btn" data-toggle="modal" data-target="#basic-modal">
+                    <img src="Modos/novillos-pesados.jpg" alt="Basic">
+                    <span>BASIC</span>
+                </a>
+                <a href="Membresias.html" class="btn btn-semi-premium" id="semi-premium-btn">
+                    <img src="Modos/Vacota.jpg" alt="Semi-Premium">
+                    <span>MEDIUM</span>
+                </a>
+                <a href="Membresias.html" class="btn btn-premium" id="premium-btn">
+                    <img src="Modos/totoro.jpg" alt="Premium">
+                    <span>ADVANCED</span>
+                </a>
+            </div>
+        </main>
+    </div>
+
+
+    <div id="premium-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">¡Oh!</div>
+            <div class="modal-body">
+                Para utilizar este Modo necesitas la membresía de "ADVANCED", ¿Deseas obtenerla?
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button close-button" id="close-premium-btn">Cerrar</button>
+                <button class="modal-button get-button" id="get-premium-btn">Obtener</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="semi-premium-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">¡Oh!</div>
+            <div class="modal-body">
+                Para utilizar este Modo necesitas la membresía de "MEDIUM", ¿Deseas obtenerla?
+            </div>
+            <div class="modal-footer">
+                <button class="modal-button close-button" id="close-semi-premium-btn">Cerrar</button>
+                <button class="modal-button get-button" id="get-semi-premium-btn">Obtener</button>
+            </div>
+        </div>
+        
+       
+
+
+
+
+    <script>
+        
+        document.getElementById('premium-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('premium-modal').style.display = 'block';
+        });
+
+        document.getElementById('close-premium-btn').addEventListener('click', function() {
+            document.getElementById('premium-modal').style.display = 'none';
+        });
+
+        document.getElementById('get-premium-btn').addEventListener('click', function() {
+            window.location.href = 'Membresias.html';
+        });
+
+       
+        document.getElementById('semi-premium-btn').addEventListener('click', function(event) {
+            event.preventDefault();
+            document.getElementById('semi-premium-modal').style.display = 'block';
+        });
+
+        document.getElementById('close-semi-premium-btn').addEventListener('click', function() {
+            document.getElementById('semi-premium-modal').style.display = 'none';
+        });
+
+        document.getElementById('get-semi-premium-btn').addEventListener('click', function() {
+            window.location.href = 'Membresias.html';
+        });
+
+        
+        window.addEventListener('click', function(event) {
+            if (event.target == document.getElementById('premium-modal')) {
+                document.getElementById('premium-modal').style.display = 'none';
+            }
+            if (event.target == document.getElementById('semi-premium-modal')) {
+                document.getElementById('semi-premium-modal').style.display = 'none';
+            }
+        });
+        
+    </script>
+
+
+</html>

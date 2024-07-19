@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Soporte</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #53640f ;
+        background-size: 600% 100%;
+        animation: gradient 16s linear infinite;
+    }
+
+    @keyframes gradient {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 100%;
+        }
+    }
+
+    .container {
+        width: 100%;
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content {
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-width: 600px;
+        width: 100%;
+        text-align: center;
+    }
+
+    h1 {
+        color: #333;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+
+    p {
+        color: #555;
+        font-size: 18px;
+        margin-bottom: 30px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #fff;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #2980b9;
+    }
+</style>
+
+<style>
+    .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-button {
+    padding: 10px 20px;
+    background-color: hsl(0, 0%, 32%);
+    color: #fff;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.modal-button:hover {
+    background-color: hsl(202, 7%, 77%);
+}
+
+</style>
+
+
+<style>
+    .form-container {
+    position: fixed;
+    left: 20px; /* Ajusta este valor según tu diseño */
+    top: 20px; /* Ajusta este valor según tu diseño */
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: hsl(227, 11%, 48%);
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s linear, background .3s linear;
+}
+
+.form-container a:hover {
+    color: #2B3044;
+    background: hsla(244, 6%, 45%, 0.678);
+}
+</style>
+
+
+
+
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <h1>Soporte</h1>
+        <img src="AvatarSoporte/SOPORTE.png" style="border-radius: 50px; max-width: 80%;" position="center">
+        <p>Estamos aquí para ayudarte. Por favor, completa el siguiente formulario y nos pondremos en contacto contigo lo antes posible.</p>
+        <div class="form-container">
+            <a href="javascript:history.back()" class="back-link">Volver</a>
+          </div>
+        <form id="support-form">
+            <input type="text" placeholder="Nombre" required>
+            <input type="email" placeholder="Correo electrónico" required>
+            <select class="custom-select" required>
+                <option value="" disabled selected>Motivo de la consulta</option>
+                <option value="error404">Error 404: Página no encontrada</option>
+                 <option value="cargaLenta">Error de carga lenta</option>
+                <option value="compatibilidad">Problemas de compatibilidad con navegadores</option>
+                <option value="seguridad">Problemas de seguridad</option>
+                <option value="Otros">Otro</option>
+            </select>
+            <textarea placeholder="Consultar:" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</div>
+
+
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <p>Pronto Nos Estaremos Comunicando Contigo.</p>
+    <button id="modalButton" class="modal-button">Ok</button>
+  </div>
+</div>
+
+<script>
+
+    var modal = document.getElementById("myModal");
+    var modalButton = document.getElementById("modalButton");
+
+
+    document.getElementById("support-form").addEventListener("submit", function(event) {
+        event.preventDefault(); 
+        modal.style.display = "block";
+    });
+
+
+    modalButton.onclick = function() {
+    history.back();
+}
+
+    
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+</body>
+</html>

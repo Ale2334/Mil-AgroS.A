@@ -1,0 +1,55 @@
+
+.details {
+    position: fixed;
+    left: 1150px;
+    top: 70px;
+    width: 350px;
+    padding: 2rem;
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    overflow: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+    transform: translateY(0);
+}
+
+.details h2 {
+font-size: 1.5rem;
+margin-bottom: 1rem;
+color: #333;
+font-weight: bold;
+}
+
+.details p {
+font-size: 1rem;
+color: #666;
+margin-bottom: 0.5rem;
+}
+
+.details p a {
+color: #007bff;
+text-decoration: none;
+}
+
+.details p a:hover {
+text-decoration: underline;
+}
+
+/* Ajuste del mapa */
+.details #mi_mapa {
+width: 100%; /*  ancho del contenedor */
+height: 200px; /* Altura fija */
+border: 1px solid #ccc;
+border-radius: 8px;
+margin-top: 1rem;
+}
+@media (max-width: 600px) {
+    .info-section {
+        position: relative;
+        width: 90%;
+        left: 5%;
+        top: 20px;
+        padding: 1rem;
+    }
+}

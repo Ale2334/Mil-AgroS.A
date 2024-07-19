@@ -1,0 +1,204 @@
+
+<style>
+        .form-container {
+    position: fixed;
+    left: 20px; /* Ajusta este valor según tu diseño */
+    top: 20px; /* Ajusta este valor según tu diseño */
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: hsl(227, 11%, 48%);
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s linear, background .3s linear;
+}
+
+.form-container a:hover {
+    color: #2B3044;
+    background: hsla(244, 6%, 45%, 0.678);
+}
+</style>
+
+
+<style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.libros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.libro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px;
+}
+
+.libro img {
+    width: 250px;
+    height: 150px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.libro img:hover {
+    transform: scale(1.1);
+}
+
+.libro h2 {
+    margin-top: 10px; 
+}
+</style>
+
+
+
+<style>
+.product-details {
+    margin-top: -50px; /* Espacio entre los libros y el carrusel */
+}
+
+.carousel {
+    max-width: 800px; /* Ancho del carrusel */
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+    border: 1px solid #ddd; /* Marco del carrusel */
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.carousel .prev, .carousel .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22 px;
+    color: white;
+    font-weight: bold;
+    font-size: 30px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.carousel .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biblioteca </title>
+
+</head>
+<body>
+
+    <div class="form-container">
+        <a href="products3.html" class="back-link">Volver</a>
+      </div>
+
+    <header>
+        <h1>Manual de Cuido</h1>
+    </header>
+    <main>
+        <section class="libros">
+            <div class="libro">
+                <a href="Ternera.html">
+                    <img src="imagB/Ternera.jpg" alt="Nacimiento de la Vaca">
+                </a>
+                <h2>Ternera</h2>
+            </div>
+            <div class="libro">
+                <a href="Novilla.html">
+                    <img src="imagB/Novilla.jpg" alt="Joventud de la vaca">
+                </a>
+                <h2>Novilla</h2>
+            </div>
+            <div class="libro">
+                <a href="Vaca.html">
+                    <img src="imagB/Vaca.jpg" alt="Edad adulta de la vaca">
+                </a>
+                <h2>Vaca</h2>
+            </div>
+        </section>
+        <section class="product-details">
+            <div class="carousel">
+                <a href="https://www.todolecheria.com.ar/como-conseguir-mas-vacas-echadas-en-sistemas-estabulados/">
+                    <img src="imagNoticia/Noticia1.png" alt="Imagen 1" class="active">
+                </a>
+                <a href="https://www.contextoganadero.com/ganaderia-sostenible/5-recomendaciones-para-el-cuidado-e-higiene-de-las-pezunas-en-las-vacas">
+                    <img src="imagNoticia/Noticia2.png" alt="Imagen 2">
+                </a>
+                <a href="https://www.uchealth.org/today/es-ultimas-noticias-sobre-la-gripe-aviar/">
+                    <img src="imagNoticia/Noticia3.png" alt="Imagen 3">
+                </a>
+                <!--... -->
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(1)">&#10095;</a>
+            </div>
+        </section>
+    </main>
+    
+ <script>
+let slideIndex = 0;
+
+function changeSlide(n) {
+    let slides = document.querySelectorAll('.carousel img');
+    slides[slideIndex].classList.remove('active');
+    slideIndex = (slideIndex + n + slides.length) % slides.length;
+    slides[slideIndex].classList.add('active');
+}
+
+setInterval(() => {
+    changeSlide(1);
+}, 5000);
+ </script>   
+
+</html>

@@ -1,0 +1,30 @@
+#promo-container {
+  position: relative;
+}
+
+#promo-popup {
+  position: fixed;
+  top: 550px;
+  right: 22px;
+  background-color: #ffffff86;
+  color: #000000;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  display: none;
+  flex-direction: column;
+  align-items: absolute;
+  width: 280px;
+  height: 115px;
+  cursor: pointer;
+}
+
+#promo-content {
+  margin-top: 1px; /* espacio para el botón de cierre */
+}
+
+#promo-image {
+  width: 80px;
+  height: 70px;
+  margin-left: 0px;
+}

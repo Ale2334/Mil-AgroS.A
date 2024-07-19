@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Vaca</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stinfosetion.css">
+    <link rel="stylesheet" href="stdetails.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        
+        
+
+            
+    </head>
+    <body>
+        <div class="info-section">
+            <h2>Vaca Holstein </h2>
+            <p><strong>Nombre Científico:</strong> Bos taurus</p>
+            <p><strong>Nombre Común:</strong> Vaca Holstein</p>
+            <p><strong>Familia:</strong> Bovidae</p>
+            <p><strong>Características Físicas:</strong></p>
+            <ul>
+                <li><strong>Tamaño:</strong> Grandes y robustas.</li>
+                <li><strong>Peso:</strong> Las vacas Holstein pueden pesar entre 600 kg y 700 kg en promedio.</li>
+                <li><strong>Altura:</strong> Alrededor de 1.4 a 1.6 metros en la cruz.</li>
+                <li><strong>Color:</strong> Principalmente blanco y negro, aunque también pueden ser rojo y blanco.</li>
+            </ul>
+            <p><strong>Características Adicionales:</strong></p>
+            <ul>
+                <li><strong>Leche:</strong>Conocidas por su alta producción de leche, especialmente adecuadas para la producción lechera comercial.</li>
+            </ul>
+        </div>
+        
+        
+</head>
+<body>
+    <header>
+        <h1>Detalles de la Vaca</h1>
+    </header>
+    <main>
+        <div class="product-details">
+            <div class="carousel">
+                <img src="Vacaholstein/Vacaholstein1.jpeg" alt="Vaca 1" class="active">
+                <img src="Vacaholstein/Vacaholstein2.jpeg" alt="Vaca 2">
+                <img src="Vacaholstein/Vacaholstein3.jpeg" alt="Vaca 3">
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(2)">&#10095;</a>
+            </div>
+            <div class="details">
+                <h3>Vaca Holstein</h3>
+                <p>Precio: $1,906.49</p>
+                <p>Ubicación: Pejibaye</p>
+                <p>Descripción: Vaca joven y lista para producción.</p>
+                <p>Edad: 1 año </p>
+                <p>Raza: Holstein  <p>
+                <p>Documentación: <a href="url">vacaHolstein.pdf</a></p>
+                <div id="mi_mapa" style="width: 95%; height: 220px;"></div>
+            </div>
+        </div>
+
+        <!-- Formulario de mensaje -->
+        <div class="form-container">
+            <form>
+                <label for="message">Enviar Mensaje:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <button class="Enviar">Enviar</button>
+            </form>
+            <a onclick="history.back()" class="back-link">Volver</a>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script>
+        let map = L.map('mi_mapa').setView([9.1624,-83.5601], 15);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([9.1624,-83.5601]).addTo(map).bindPopup("Santa Clara");
+
+        let slideIndex = 0;
+
+        function changeSlide(n) {
+            let slides = document.querySelectorAll('.carousel img');
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
+

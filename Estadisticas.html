@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estadisticas</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+<style>
+.form-container {
+    position: fixed;
+    left: 20px; /* Ajusta este valor según tu diseño */
+    top: 20px; /* Ajusta este valor según tu diseño */
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: hsla(214, 42%, 53%, 0.103);
+    color: hwb(206 13% 13%);
+    text-decoration: #020202;
+    transition: color .2s linear, background .3s linear;
+}
+
+.form-container:hover {
+    color: rgb(86, 115, 210);
+    background: #0c09ce8b;
+}
+</style>
+    
+    <style>
+        .chart-container {
+            width: 50%;
+            height: 50%;
+            margin: auto;
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <a onclick="history.back()" class="back-link">Volver</a>
+      </div>
+    <div class="chart-container">
+        <h2>Visualizaciones de Tus Publicaciones</h2>
+        <canvas id="myChart"></canvas>
+    </div>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Vistas de Jersey ', 'Vistas de Pedigree ', 'Vistas de Holstein '],
+                datasets: [{
+                    label: 'Vistas',
+                    data: [12, 5, 2],
+                    backgroundColor: ['#0B3D91', '#339AF0', '#4CC9F0'],
+                    hoverBackgroundColor: ['#0B3D91', '#339AF0', '#4CC9F0'],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: {
+                        display: true,
+                        position: 'top'
+                    },
+                    tooltip: {
+                        enabled: true
+                    }
+                },
+                circumference: 180,
+                rotation: -90,
+                cutout: '60%',
+                plugins: {
+                    datalabels: {
+                        formatter: (value, context) => {
+                            return context.chart.data.labels[context.dataIndex];
+                        },
+                        color: '#000',
+                        font: {
+                            weight: 'bold'
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>

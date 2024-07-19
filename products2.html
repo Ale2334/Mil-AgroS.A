@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styleNavigation.css">
+    <link rel="stylesheet" href="stpromodescuen.css">
+    
+
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+</head>
+<body>
+
+    <div id="welcome-popup-container">
+        <button id="close-welcome-popup">x</button>
+        <div id="welcome-popup">
+          <span id="popup-text"></span>
+        </div>
+        
+      </div>
+
+
+    <div class="drawer-container">
+        <nav class="drawer">
+            <ul class="drawer-list">
+
+                <li class="drawer-item">
+                    <i class="fas fa-user"></i>
+                    <span>Cuenta</span>
+                    <a id="cuentaLink" href="Cuenta.html"></a>
+                </li>
+                <li class="drawer-item">
+                    <i class="fas fa-id-card"></i>
+                    <span>Membresías</span>
+                    <a id="membresiasLink" href="Membresias.html"></a>
+                </li>
+                <li class="drawer-item">
+                    <i class="fas fa-dollar-sign"></i>
+                    <span>Vender</span>
+                    <a id="ventasLink" href="AVentas.html"></a>
+                </li>
+                <li class="drawer-item">
+                    <i class="bi-shop-window"></i>
+                    <span>Mis Ventas</span>
+                    <a id="MisVentas" href="MisVentas.html"></a>
+                </li>
+                <br>
+                <li class="drawer-item">
+                    <i class="bi bi-shop"></i>
+                    <span>Tienda</span>
+                    <a id="tienditaLink" href="tiendita.html"></a>
+                </li>
+                <br>
+                <li class="drawer-item">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Estadísticas</span>
+                    <a id="estadisticasLink" href="Estadisticas.html"></a>
+                </li>
+                <li class="drawer-item">
+                    <i class="bi bi-mailbox2"></i>
+                    <span>Buzon</span>
+                    <a id="soporteLink" href="Buzon.html"></a>
+                </li>
+
+                <li class="drawer-item">
+                  <i class="bi bi-gear-fill"></i>
+                    <span>Soporte</span>
+                    <a id="soporteLink" href="Soporte.html"></a>
+                </li>
+                <li class="drawer-item">
+                    <i class="bi bi-info-circle-fill"></i>
+                    <span>Info</span>
+                    <a id="infoLink" href="info.html"></a>
+                </li>
+
+
+                <li class="drawer-item">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>cerrar sesión</span>
+                    <a id="soporteLink" href="Index.html"></a>
+                </li>
+            </ul>
+        </nav>
+    <!-- dejamos esto para que no afecte el orden de los items del Navigation -->
+        <div class="news-ticker">
+            <div class="news-ticker-container">
+              <div class="news-item"> </div>
+            </div>
+          </div>
+          <!-- --------------------------------------------------------------- -->
+          
+<!-- Contenedor de la cinta de publicidad -->
+<div id="promo-container">
+    <!-- Cinta de publicidad -->
+    <div id="promo-popup">
+      <!-- Contenido de la cinta de publicidad -->
+      <div id="promo-content">
+        <img id="promo-image" src="" alt="" width="40" height="40">
+        <span id="promo-text"></span>
+      </div>
+    </div>
+  </div>
+          
+          
+          
+          <div class="news1-ticker">
+            <div class="news-ticker-container">
+              <div class="news-item"> Producción de leche aumenta un 10% en el país</div>
+              <div class="news-item"> Nuevos programas de apoyo a la ganadería se lanzan en la región</div>
+              <div class="news-item"> Exportaciones de carne aumentan un 20% en el último trimestre</div>
+              <div class="news-item"> Investigadores desarrollan nueva raza de ganado más resistente a enfermedades</div>
+              <div class="news-item"> Gobierno anuncia inversión de $10 millones en tecnología para mejorar la eficiencia en granjas</div>
+              <div class="news-item"> Asociación de ganaderos lanza campaña para promover la carne de origen nacional</div>
+              <div class="news-item"> Estudio revela que la ganadería sostenible puede reducir emisiones de gases de efecto invernadero</div>
+              <div class="news-item"> Feria de ganadería más grande del país se realizará en marzo próximo</div>
+              <div class="news-item"> Nueva variedad de forraje resistente a la sequía se lanza en el mercado</div>
+              <div class="news-item"> ooperativa de ganaderos lanza programa de capacitación para jóvenes agricultores</div>
+            </div>
+          </div>
+        <div class="main-content">
+            <header>
+                <h2>Sugerencias de Hoy</h>
+            </header>
+            
+            <div class="banner">
+                <div class="overlay">
+                    <div class="banner-content">
+                        <div class="logo">
+                                
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <main>
+                
+              <div class="product-grid">
+                <div class="product-item">
+                    <a href="VacaGuernesey.html">
+                        <img src="Vacaguernsey/VacaguernseyCard.jpeg" alt="Vaca de Guernesey">
+                        <p>Precio: $3,243</p>
+                        <p>Ubicación: San José</p>
+                        <p>Edad: 3 Años</p>
+                        <p>Raza: Guernesey</p>
+                    </a>
+                    
+                </div>
+                <div class="product-item">
+                    <a href="ToroRojo.html">
+                        <img src="ToroRojo/ToroRojoCard.jpeg" alt="Toro Brahman Rojo">
+                        <p>Precio: $6,696</p>
+                        <p>Ubicación: Alajuela</p>
+                        <p>Edad: 2 Años</p>
+                        <p>Raza: Toro Brahman Rojo </p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="ToroBrahman.html">
+                        <img src="ToroBrahmanBlanco/ToroBrahmanBlancoCard.jpg" alt="Toro Brahman Blanco">
+                        <p>Precio: $2,866</p>
+                        <p>Ubicación: Perez Zeledon</p>
+                        <p>Edad: 1 Año</p>
+                        <p>Raza: Toro Brahman Blanco</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="VacadeJersey.html">
+                        <img src="Vacajersey/CardJesey.jpg" alt="Vaca de Jersey">
+                        <p>Precio: $3,050</p>
+                        <p>Ubicación: Perez Zeledon</p>
+                        <p>Edad: 5 Años</p>
+                        <p>Raza: Jersey</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="VacaHolstein.html">
+                        <img src="Vacaholstein/VacaholsteinCard.jpeg" alt="Vaca Holstein">
+                        <p>Precio: $1,906</p>
+                        <p>Ubicación: Pejibaye</p>
+                        <p>Edad: 1 Año</p>
+                        <p>Raza: Holstein</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="ToroPedigree.html">
+                        <img src="ToroPedigreeNegro/PedigreeCard.jpeg" alt="Vaca Marrón Suiza">
+                        <p>Precio: $6,318</p>
+                        <p>Ubicación: San Miguel</p>
+                        <p>Edad: 2 años</p>
+                        <p>Raza: Pedigree</p>
+                    </a>
+                </div>
+                <div class="product-item">
+                    <a href="VacaMarrónSuiza.html">
+                        <img src="VacaMarronSuiza/VacasuizaCard.jpg" alt="Vaca Marrón Suiza">
+                        <p>Precio: $4,393</p>
+                        <p>Ubicación: Cajon </p>
+                        <p>Edad: 3 años</p>
+                        <p>Raza: Pardo zuiso</p>
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+ <script>
+        
+        document.querySelectorAll('.drawer-item').forEach(item => {
+            item.addEventListener('click', function() {
+                
+                let link = this.querySelector('a');
+
+                
+                if (link && link.href) {
+                    window.location.href = link.href;
+                }
+            });
+        });
+    </script>
+    <script>
+const messages = [
+
+  {
+    text: "¡Descubre el poder del modo ADVANCED! Con acceso a la tienda de medicamentos veterinarios, promociones y ofertas, y mucho más.",
+    type: "promocional"
+  },
+  {
+    text: "¡Me encanta el modo ADVANCED! Ahora puedo comprar y vender ganado con facilidad y acceder a noticias y anuncios relevantes. - Juan P., usuario satisfecho",
+    type: "testimonial"
+  },
+  {
+    text: "¿Por qué elegir el modo Medium cuando puedes tener mucho más con el modo ADVANCED? ¡Accede a video guías del cuidado del animal y mucho más!",
+    type: "promocional"
+  },
+  {
+    text: "El modo ADVANCED me ha permitido expandir mi negocio de ganado. ¡Es una inversión que vale la pena! - María G., usuario satisfecho",
+    type: "testimonial"
+  },
+  {
+    text: "No te pierdas las oportunidades que ofrece el modo ADVANCED. ¡Accede a promociones y ofertas exclusivas y mucho más!",
+    type: "promocional"
+  },
+  {
+    text: "Con el modo ADVANCED, puedo gestionar mi ganado de manera más eficiente. ¡Es una herramienta indispensable!",
+    type: "testimonial"
+  },
+  {
+    text: "¿Quieres aumentar tus ventas de ganado? ¡El modo ADVANCED es la respuesta!",
+    type: "promocional"
+  },
+  {
+    text: "El modo ADVANCED me ha permitido ahorrar tiempo y dinero. ¡Es una excelente opción!",
+    type: "testimonial"
+  },
+  {
+    text: "¿Por qué esperar? ¡Actualiza a modo ADVANCED hoy mismo y descubre todos sus beneficios!",
+    type: "promocional"
+  },
+  {
+    text: "El modo ADVANCED es la mejor opción para cualquier ganadero. ¡No te pierdas esta oportunidad!",
+    type: "promocional"
+  }
+];
+let currentIndex = 0;
+
+function showNextMessage() {
+  const message = messages[currentIndex];
+  const popupText = document.getElementById("welcome-popup").getElementsByTagName("span")[0];
+  popupText.textContent = message.text;
+
+
+
+  // Mostramos la ventana emergente
+  document.getElementById("welcome-popup").style.display = "flex";
+
+
+  // Ocultamos la ventana emergente después de 4 segundos
+  setTimeout(function() {
+    document.getElementById("welcome-popup").style.display = "none";
+  }, 4000);
+
+  // Mostramos el próximo mensaje después de 10 segundos
+  setTimeout(function() {
+    currentIndex = (currentIndex + 1) % messages.length;
+    showNextMessage();
+  }, 40000);
+}
+
+showNextMessage();
+
+    </script>
+
+
+
+    <script>
+      
+let currentPromoIndex = 0;
+const promoMessages = [
+  { text: "Lleva uno y el otro te lo llevas gratis!", image: "image/Draxxin.png" },
+  { text: "20% de descuento en este producto!", image: "image/Citius 5.png" },
+  { text: "5% de descuento en este producto!", image: "image/Draxxin.png" },
+  { text: "Llevate 1 y lleva 2 Gratis!", image: "image/Multiplex Vitaminado.jpeg" },
+  { text: "Milagroso producto!", image: "image/RB51 BRUCELOSIS.png" },
+  { text: "10% de descuento en este producto!", image: "image/Yodoland-x-100-mL.png" },
+  { text: "Lo mas comprado!", image: "image/Vitamina E.png" },
+
+];
+
+function showNextPromo() {
+  const currentMessage = promoMessages[currentPromoIndex];
+  const promoTextElement = document.getElementById("promo-text");
+  const promoImageElement = document.getElementById("promo-image");
+  promoTextElement.textContent = currentMessage.text;
+  promoImageElement.src = currentMessage.image;
+
+  // Mostramos la ventana emergente
+  document.getElementById("promo-popup").style.display = "flex";
+
+  // Ocultamos la ventana emergente después segundos
+  setTimeout(function() {
+    document.getElementById("promo-popup").style.display = "none";
+  }, 14000);
+
+  // Mostramos el próximo mensaje después segundos
+  setTimeout(function() {
+    currentPromoIndex = (currentPromoIndex + 1) % promoMessages.length;
+    showNextPromo();
+  }, 30000);
+}
+
+// Agregamos evento de click a la cinta de publicidad
+document.getElementById("promo-popup").addEventListener("click", function() {
+  window.location.href = "tiendita.html";
+});
+
+showNextPromo();
+    </script>
+</body>
+</html>
+
+
+

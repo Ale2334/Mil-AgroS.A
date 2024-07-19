@@ -1,0 +1,290 @@
+
+.btn-custom {
+    border: 2px solid #ff0000; 
+    background-color: #ffffff; 
+    color: #ff0000; 
+    padding: 10px 20px; 
+    font-size: 13px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.btn-custom:hover {
+    background-color: #ff0000;
+    color: #ffffff; 
+}
+/* ---------------------------- */
+
+
+
+
+/* Estilo personalizado para el botón "Cancelar" */
+.btn-cancel {
+    border: 2px solid #ff0000; 
+    background-color: #ff0000; 
+    color: #ffffff; 
+    padding: 10px 20px;
+    font-size: 12px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+
+.btn-cancel:hover {
+    border-color: hsl(0, 100%, 57%);
+    background: #ff2626c0; 
+    color: hsl(0, 0%, 100%); 
+}
+/* ---------------- */
+
+
+
+/*  Estilo de boton de Guadar cambios */
+.btn-Guadarcambios {
+    border: 2px solid hwb(210 0% 0%); 
+    background-color: hsl(241, 100%, 50%); 
+    color: #ffffff; 
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-Guadarcambios:hover {
+    border-color: hwb(220 14% 0%);
+    background: hsla(212, 100%, 57%, 0.678); 
+    color: hsl(0, 0%, 100%); 
+}
+
+
+
+
+
+/* Estilo de Cambiar imagen*/
+.ui-w-80 {
+    width: 80px !important;
+    height: auto;
+}
+
+
+.btn-outline-primary {
+    border-color: #01a6ff;
+    background: transparent;
+    color: #01a6ff;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.text-light {
+    color: hsl(0, 0%, 96%) !important;
+}
+/* ---------------------------- */
+
+/* Estilo del boton "Enlazar" */
+.btn-Enlazar {
+    border: 2px solid rgba(151, 236, 81, 0.8); 
+    background-color: #c9f0a975; 
+    color: #181616; 
+    padding: 10px 20px; 
+    font-size: 14px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.btn-Enlazar:hover {
+    background-color: rgba(151, 236, 81, 1);
+    border-color: rgba(151, 236, 81, 1); 
+}
+
+/* ------------------ */
+
+
+
+/* Estilo personalizado para las casillas de verificación */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.checkbox-input:checked ~ .checkbox-checkmark {
+    background-color: #4CAF50;
+}
+
+.checkbox-checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-input:checked ~ .checkbox-checkmark::after {
+    display: block;
+}
+
+.checkbox-input ~ .checkbox-checkmark::after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+/* ---------------- */
+
+/* Imagen Avatar */
+
+.img-grande {
+    width: 26%;
+    max-width: 400px; 
+    height: auto; 
+}
+/* ------------------ */
+
+/* Estilo para el enlace "Volver" */
+.form-container {
+    position: fixed;
+    left: 20px; 
+    top: 20px; 
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: hsl(227, 11%, 48%);
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s linear, background .3s linear;
+}
+
+.form-container:hover {
+    color: #2B3044;
+    background: hsla(244, 6%, 45%, 0.678);
+}
+
+
+/* ------------- */
+
+
+/* Dezplazamiento de pantalla */
+@keyframes scrollDown {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(50px);
+    }
+}
+
+.scroll-down {
+    animation: scrollDown 0.5s ease forwards;
+}
+
+/* ----------------- */
+
+
+
+
+
+.card {
+    background-clip: padding-box;
+    box-shadow: 0 1px 4px rgba(24, 28, 33, 0.012);
+
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position: absolute;
+    visibility: hidden;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect ~ .select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding: 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}

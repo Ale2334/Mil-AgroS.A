@@ -1,0 +1,459 @@
+/* General Styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color:#FFFFFF;
+    height: 100%;
+}
+
+header {
+    text-align: center;
+    background-color: #fff;
+    padding: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 2rem;
+    color: #333;
+    margin: 0;
+}
+
+
+/* Estilo de Los productos */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 2rem; 
+    padding: 2rem;
+    background-color: #53640f ;
+}
+
+/* Estilo para cada tarjeta de producto */
+.product-item {
+    background: #fff;
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center; 
+    padding: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); 
+}
+
+.product-item img {
+    width: 100%;
+    height: auto;
+    border-bottom: 2px solid #ddd; 
+    margin-bottom: 1rem; 
+}
+
+.product-item p {
+    padding: 0.5rem 1rem;
+    margin: 0.5rem 0;
+    text-align: left; 
+    font-size: 1rem; 
+    color: #555; 
+}
+
+.product-item p strong {
+    color: #333; 
+    font-weight: bold;
+}
+
+/* Estilo específico para las etiquetas */
+.product-item p span {
+    display: block;
+    color: #3498db;
+    font-size: 0.875rem; 
+    margin-bottom: 0.25rem; 
+}
+
+
+/* Estilo responsive para pantallas más pequeñas */
+@media (max-width: 600px) {
+    .product-grid {
+        grid-template-columns: 1fr; 
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .product-item {
+        padding: 0.5rem;
+    }
+}
+
+
+/* Product Details */
+.product-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+    gap: 2rem;
+}
+
+.product-details img {
+    max-width: 400px;
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.details {
+    max-width: 400px;
+    flex: 1;
+    text-align: left;
+}
+
+.details h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.details p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+form {
+    margin-top: 1rem;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+form input[type="file"],
+form textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+}
+
+form button {
+    display: inline-block;
+    background-color: hsl(210, 14%, 84%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: hsl(213, 9%, 79%);
+}
+
+form a {
+    display: inline-block;
+    margin-top: 1rem;
+    text-decoration: none;
+    color: #007bff;
+    transition: color 0.3s ease;
+}
+
+form a:hover {
+    color: #d4d9dd;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@media (max-width: 1024px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); 
+    }
+}
+
+
+
+
+/* Tipo de Letra de la card */
+.form-content h1 {
+    font-size: 30px;
+    margin-bottom: 60px;
+    color: #FFFFFF;
+    position: relative;
+}
+
+/* Línea decorativa debajo del título */
+.form-content h1::after {
+    content: "";
+    width: 30px;
+    height: 4px;
+    border-radius: 3px;
+    background: #04BD7D;
+    position: absolute;
+    bottom: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* -------------- */
+
+
+
+/* Galeria*/
+.form-container {
+    width: 100%;
+    text-align: center; 
+    margin-top: 20px; 
+    position: relative; 
+    left: 20px;
+}
+
+/* Estilo para el enlace "Volver" */
+.form-container a {
+    display: inline-block; 
+    margin-left: 30px; 
+    margin-right: 50px; 
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: hsl(227, 11%, 48%);
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s linear, background .3s linear;
+}
+
+.form-container a:hover {
+    color: #2B3044;
+    background: hsla(244, 6%, 45%, 0.678);
+}
+
+.Enviar {
+    background: hsl(227, 11%, 48%);
+}
+
+.Enviar:hover {
+    background: hsla(244, 6%, 45%, 0.678);
+}
+
+
+
+/* Estilo para el formulario */
+.form-container form {
+    display: inline-block; 
+    color: #fff;
+    margin-left: 100px;
+}
+
+
+/* Estilos para el contenedor del carrusel */
+.carousel {
+    max-width: 400px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.carousel img {
+    width: 100%;
+    display: none;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+/* Estilos para los botones de navegación */
+.carousel .prev, .carousel .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.carousel .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.carousel .prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* Ajustes adicionales para el carrusel */
+.product-details .carousel,
+.product-details .details {
+    flex: 1 1 400px;
+}
+
+
+
+
+#welcome-popup-container {
+    position: relative;
+  }
+  
+  #welcome-popup {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 350px;
+    animation: slideInRight 0.5s ease-in-out, bounce 1s ease-in-out 0.5s infinite;
+    cursor: pointer;
+  }
+  
+  #close-welcome-popup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    cursor: pointer;
+    margin-left: 15px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  .welcome-popup-content {
+    margin-top: 40px; /* espacio para el botón de cierre */
+  }
+  
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(100%);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+
+  .news-ticker {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: hsla(0, 0%, 94%, 0);
+  padding: 10px;
+  overflow: hidden;
+}
+
+.news-ticker-container {
+  white-space: nowrap;
+  animation: ticker 30s linear infinite;
+}
+
+.news-item {
+  display: inline-block;
+  margin-right: 20px;
+}
+
+@keyframes ticker {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+
+  .news1-ticker {
+    position: absolute;
+    top: 12px;
+    right: -760px;
+    width: 77%;
+    background-color: #f0f0f0;
+    padding: 10px;
+    overflow: hidden;
+    margin-right:40%;
+  }
+  
+  .news1-ticker-container {
+    white-space: nowrap;
+    animation: ticker 30s linear infinite;
+  }
+  
+  .news1-item {
+    display: inline-block;
+    margin-right: 100px;
+  }
+  
+  @keyframes ticker {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+/* sugerencias de hoy */
+
+.main-content header {
+   text-align: left;
+ }
+.main-content header h2 {
+   margin-left: 0;
+   padding-left: 20px; 
+ }

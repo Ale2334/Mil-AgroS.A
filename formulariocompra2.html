@@ -1,0 +1,299 @@
+<STYle>
+    body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 100px;
+    padding: 0;
+}
+
+.checkout-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-section {
+    width: 48%;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group input {
+    width: auto;
+    margin-right: 10px;
+}
+
+button {
+    background-color: #ff6600;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e55b00;
+}
+
+.payment-icons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.payment-icons img {
+    width: 50px;
+    height: auto;
+}
+
+</STYle>
+
+
+<style>
+.Volver {
+    position: fixed;
+    left: 20px; /* Ajusta este valor según tu diseño */
+    top: 20px; /* Ajusta este valor según tu diseño */
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: #ffdb6564;
+    color: #fff;
+    text-decoration: hwb(41 28% 4%);
+    transition: color .2s linear, background .3s linear;
+}
+
+.Volver:hover {
+    color: hwb(227 67% 28%);
+    background: hwb(57 80% 4% / 0.297);
+}
+</style>
+<style>
+    /* Estilo personalizado para las casillas de verificación */
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 15px;
+    user-select: none;
+}
+
+.checkbox-input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #ccc;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.checkbox-input:checked ~ .checkbox-checkmark {
+    background-color: hsl(52, 71%, 65%);
+}
+
+.checkbox-checkmark::after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkbox-input:checked ~ .checkbox-checkmark::after {
+    display: block;
+}
+
+.checkbox-input ~ .checkbox-checkmark::after {
+    left: 7px;
+    top: 3px;
+    width: 6px;
+    height: 12px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox-label {
+    margin-left: 10px;
+    font-size: 14px;
+    color: #333;
+}
+</style>
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form/com</title>
+</head>
+<body>
+    <div class="Volver">
+        <a href="tiendita.html" >Volver</a>
+    </div>
+    <div class="checkout-container">
+        <div class="form-section">
+            <h1>Información del cliente</h1>
+            
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-email">Correo electrónico</label>
+                    <input type="email" id="customer-email" name="customer-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-first-name">Nombre</label>
+                    <input type="text" id="customer-first-name" name="customer-first-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-last-name">Apellido</label>
+                    <input type="text" id="customer-last-name" name="customer-last-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-zip">Código postal (C. P.)</label>
+                    <input type="text" id="customer-zip" name="customer-zip" required>
+                </div>
+                <div class="form-group">
+                    <label for="customer-country">País</label>
+                    <select id="customer-country" name="customer-country" required>
+                        <option >Costa Rica</option>
+                        <option >Guatemala</option>
+                        <option>El Salvador</option>
+                        <option>Honduras</option>
+                        <option>Panama</option>
+                        <option>Nicaragua</option>
+                        
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="checkbox-input" >
+                        <span class="checkbox-checkmark"></span>
+                        <span class="checkbox-label">Acepto los términos y condiciones de esta página.</span>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="checkbox-input" >
+                        <span class="checkbox-checkmark"></span>
+                        <span class="checkbox-label">Haga clic aquí si usted representa a una empresa.</span>
+                    </label>
+                </div>
+            </form>
+        </div>
+            <form id="payment-form">
+                <div class="form-group">
+                    <br><br><br>
+                    <label for="card-number">Número de tarjeta de crédito</label>
+                    <input type="text" id="card-number" name="card-number" required>
+                </div>
+                <div class="form-group">
+                    <label for="card-expiry-month">Mes</label>
+                    <select id="card-expiry-month" name="card-expiry-month" required>
+      
+                        <option value="01">01</option>
+                        <option value="02">02</option>
+                        <option value="03">03</option>
+                        <option value="04">04</option>
+                        <option value="05">05</option>
+                        <option value="06">06</option>
+
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="card-expiry-year">Año</label>
+                    <select id="card-expiry-year" name="card-expiry-year" required>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="card-cvc">Código de seguridad CVC</label>
+                    <input type="text" id="card-cvc" name="card-cvc" required>
+                </div>
+    
+                <div class="form-group">
+                    <label class="checkbox-container">
+                        <input type="checkbox" class="checkbox-input" >
+                        <span class="checkbox-checkmark"></span>
+                        <span class="checkbox-label">Quiere resivir la notificacion de la compra realizada?.</span>
+                    </label>
+                </div>
+                <button class="buy-btn">COMPRA AHORA</button>
+
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const buttons = document.querySelectorAll(".buy-btn, .highlighted-btn");
+
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            window.location.href = "pantacompratiendiya.html";
+        });
+    });
+});
+
+    </script>
+
+
+</body>
+</html>

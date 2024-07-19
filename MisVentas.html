@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Productos</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+    <style>
+        
+ .form-container {
+    position: fixed;
+    left: 1701px;
+    top: -11px; /* Ajusta este valor según tu diseño */
+    display: inline-block;
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: hsl(227, 11%, 48%);
+    color: hwb(240 93% 5%)fff;
+    text-decoration: rgb(236, 237, 240);
+    transition: color .2s linear, background .3s linear;
+    width: 110px;
+    margin-right: -800px;
+    
+}
+
+.form-container:hover {
+    color: hwb(115 67% 28%);
+    background: hsla(244, 6%, 45%, 0.678);
+}
+        
+
+        .Barras-container {
+            position: absolute;
+            top: 120px;
+            right: 100%;
+        }
+
+        .Barras-modal {
+            color: rgb(44, 43, 43);
+            text-decoration: none;
+            font-size: 30px;
+            font-weight: bold;
+            margin-left: 90%;
+        }
+
+        .Barras-modal:hover {
+            color: #0dbe15b9;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        /* Cinta Verde */
+        .banner2 {
+            background-color: rgba(137, 154, 137, 0.759);
+            color: #fff;
+            text-align: left;
+            padding: 10px;
+            border-radius: 30px;
+            margin-right: 100px;
+            height: 38px;
+            position: absolute;
+            margin-top: -15px;
+        }
+
+        .text-baner2 {
+            font-size: 20px;
+            margin-top: -5px;
+            font-weight: bold;
+        }
+
+        /* Menu 1 */
+        .menu-emergente {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 35px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            z-index: 1000;
+            margin-left: 50px;
+        }
+        .menu-emergente ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-emergente ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-emergente ul li:hover {
+            background-color: #f0f0f0;
+        }
+        
+    /* Menu 2 */
+        .menu-emergente2{
+            display: none;
+            position:absolute;
+            top: 50px;
+            left: 450px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0,0, 0.1);
+            padding: 10px;
+            z-index: 1000;
+            margin-left: 50px;
+            }
+
+        .menu-emergente2 ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-emergente2 ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-emergente2 ul li:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Menu 3 */
+        .menu-emergente3{
+            display: none;
+            position:absolute;
+            top: 50px;
+            left:890px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0,0, 0.1);
+            padding: 10px;
+            z-index: 1000;
+            margin-left: 50px;
+            }
+
+        .menu-emergente3 ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu-emergente3 ul li {
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .menu-emergente3 ul li:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+    <style>
+        .message0-popup {
+            display: none;
+            position: fixed;
+            top: 85%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #ffffff;
+            color: #4CAF50;
+            border: 2px solid #4CAF50;
+            padding: 10px 20px;
+            border-radius: 5px;
+            z-index: 1000;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            animation: fadeInOut 1s ease-in-out;
+        }
+
+        @keyframes fadeInOut {
+            0% { opacity: 0; }
+            25% { opacity: 1; }
+            75% { opacity: 1; }
+            80% { opacity: 0; }
+        }
+
+    </style>
+        <style>
+            
+        /* Menu1*/
+            .menu-desplegable1 {
+                display: none;
+                position: absolute;
+                top: 90px;
+                left: 20%;
+                background-color: #f9f9f9;
+                min-width: 120px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1000;
+            }
+            
+            .menu-desplegable1 a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+            .menu-desplegable1 a:hover {
+                background-color: #f1f1f1;
+            }
+    
+            .menu-desplegable1 .icon {
+                margin-right: 10px;
+            }
+            
+           
+        /* Menu2*/
+            .menu-desplegable2 {
+                display: none;
+                position: absolute;
+                top: 90px;
+                right: 100px;
+                background-color: #f9f9f9;
+                min-width: 120px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1000;
+            }
+    
+            .menu-desplegable2 a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+            .menu-desplegable2 a:hover {
+                background-color: #f1f1f1;
+            }
+    
+            .menu-desplegable2 .icon {
+                margin-right: 10px;
+            }
+            .menu-desplegable3 {
+                display: none;
+                position: absolute;
+                top: 90px;
+                left: 20%;
+                background-color: #f9f9f9;
+                min-width: 120px;
+                box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+                z-index: 1000;
+            }
+            
+        /* Menu3*/
+            .menu-desplegable3 a {
+                color: black;
+                padding: 12px 16px;
+                text-decoration: none;
+                display: block;
+            }
+    
+            .menu-desplegable3 a:hover {
+                background-color: #f1f1f1;
+            }
+    
+            .menu-desplegable3 .icon {
+                margin-right: 10px;
+            }
+        </style>
+           
+            <style>
+                /* pantalla emergente Privacidad */
+                .popup1 {
+                    display: none;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    z-index: 1000;
+                    justify-content: center;
+                    align-items: center;
+                }
+        
+                .popup1-content {
+                    background-color: hsl(0, 25%, 94%);
+                    padding: 20px;
+                    border-radius: 8px;
+                    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+                    max-width: 300px;
+                    text-align: center;
+                }
+        
+                .popup1-content a {
+                    display: block;
+                    color: #333;
+                    text-decoration: none;
+                    padding: 10px;
+                    margin: 5px 0;
+                }
+        
+                .popup1-content a:hover {
+                    background-color: #6ed66b9f;
+                }
+            </style>
+                <style>
+                    .notificacion0 {
+                        display: none;
+                        position: fixed;
+                        top: 35%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        padding: 20px;
+                        border-radius: 10px;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        animation-duration: 1s;
+                    }
+            
+                    .show {
+                        display: block;
+                        animation-name: fadeInOut;
+                    }
+            
+                    @keyframes fadeInOut {
+                        0% {
+                            opacity: 0;
+                            transform: translate(-50%, -60%);
+                        }
+                        50% {
+                            opacity: 1;
+                            transform: translate(-50%, -50%);
+                        }
+                        100% {
+                            opacity: 0;
+                            transform: translate(-50%, -40%);
+                        }
+                    }
+                </style>
+                
+                <style>
+                    /* pantalla emergente Edit */
+                    .popup3 {
+                        display: none;
+                        position: fixed;
+                        top: 35px;
+                        left: 35%;
+                        width: 100%;
+                        height: 100%;
+                        z-index: 1000;
+                    }
+                
+                    .popup3-content {
+                        background-color: #f9f9f9;
+                        padding: 20px;
+                        border-radius: 10px;
+                        box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+                        max-width: 450px; 
+                        max-height: 600px;
+                        text-align: center;
+                        width: 100%; 
+                        height: auto; 
+                        overflow-y: auto; 
+                        box-sizing: border-box; 
+                    }
+                
+                    .popup3-content input {
+                        margin-bottom: 10px;
+                        padding: 5px;
+                        width: calc(100% - 10px);
+                        border: 1px solid #ccc;
+                        border-radius: 4px;
+                    }
+                
+                    .popup3-content button {
+                        margin-top: 10px;
+                        padding: 10px 20px;
+                        border: none;
+                        border-radius: 5px;
+                        background-color: #57cc99;
+                        color: #fff;
+                        cursor: pointer;
+                        transition: background-color 0.3s ease;
+                    }
+                
+                    .popup3-content button.cancel {
+                        background-color: #d9534f;
+                    }
+                
+                    .popup3-content button:hover {
+                        background-color: #80ed99;
+                    }
+                
+                    .popup3-content button.cancel:hover {
+                        background-color: #e2706d;
+                    }
+                
+                </style>
+                
+<!-- Notificaciones Mute y DesmuT -->
+<style>
+    .notificacion-popup {
+        display: none;
+        position: fixed;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+        animation-duration: 1s;
+    }
+
+    .show-popup {
+        display: block;
+        animation-name: fadeInOutPopup;
+    }
+
+    @keyframes fadeInOutPopup {
+        0% {
+            opacity: 0;
+            transform: translate(-50%, -60%);
+        }
+        50% {
+            opacity: 1;
+            transform: translate(-50%, -50%);
+        }
+        100% {
+            opacity: 0;
+            transform: translate(-50%, -40%);
+        }
+    }
+</style>
+
+
+</head>
+<body>
+    <div class="main-content">
+        <header>
+            <h1>Mis Artículos</h1>
+        </header>
+        <div class="banner">
+            <div class="overlay">
+                <div class="banner-content">
+                    <div class="logo">
+                        <a onclick="history.back()" class="form-container">Volver</a>
+                        <div class="banner2">
+                            <p class="text-baner2">En Venta:</p>
+                        </div>
+                    </div>
+                    <div class="product-grid">
+                        <div class="product-item">
+                            <a class="Barras-modal" href="#" onclick="toggleMenu1()">
+                                <i class="bi bi-list"></i>
+                            </a>
+                            <img id="imagenItem1" src="Vacajersey/CardJesey.jpg" alt="Vaca de Jersey">
+                            <p id="precioItem1">Precio: $3,050</p>
+                            <p id="ubicacionItem1">Ubicación: Perez Zeledon</p>
+                            <p id="edadItem1">Edad: 5 Años</p>
+                            <p id="razaItem1">Raza: Jersey</p>
+                            <ul class="menu-emergente" id="menu1">
+                                <li onclick="editarPublicacion1()"><i class="bi bi-pencil"></i> Editar publicación</li>
+                            </ul>
+                        </div>
+                
+                    <div class="product-item">
+                        <a class="Barras-modal" href="#" onclick="toggleMenu2()">
+                            <i class="bi bi-list"></i>
+                        </a>
+                        <img id="imagenItem2" src="ToroPedigreeNegro/PedigreeCard.jpeg" alt="">
+                        <p id="precioItem2">Precio: $6,293 </p>
+                        <p id="ubicacionItem2">Ubicación: San Miguel</p>
+                        <p id="edadItem2">Edad: 2 Años</p>
+                        <p id="razaItem2">Raza: Pedigree</p>
+                        <ul class="menu-emergente" id="menu2">
+                            <li onclick="editarPublicacion2()"><i class="bi bi-pencil"></i> Editar publicación</li>
+                        </ul>
+                    </div>
+                
+                    <div class="product-item">
+                        <a class="Barras-modal" href="#" onclick="toggleMenu3()">
+                            <i class="bi bi-list"></i>
+                        </a>
+                        <img id="imagenItem3" src="Vacaholstein/VacaholsteinCard.jpeg" alt="Vaca Holstein">
+                        <p id="precioItem3">Precio: $1,906 </p>
+                        <p id="ubicacionItem3">Ubicación: Pejibaye</p>
+                        <p id="edadItem3">Edad: 1 Año</p>
+                        <p id="razaItem3">Raza: Holstein</p>
+                        <ul class="menu-emergente" id="menu3">
+                            <li onclick="editarPublicacion3()"><i class="bi bi-pencil"></i> Editar publicación</li>
+                        </ul>
+                    </div>
+               
+     
+        <div id="menuEmergente1" class="menu-emergente">
+             <ul>
+                <li onclick="toggleNotificaciones12()"><i class="bi bi-bell"></i> Notificaciones de esta publicación</li>
+                <li onclick="eliminarPublicacion1()"><i class="bi bi-trash"></i> Eliminar</li>
+                <li onclick="editarPublicacion1()"><i class="bi bi-pencil"></i> Editar publicación</li>
+                <li onclick="mostrarPopup()"><i class="bi bi-gear"></i> Editar privacidad</li>
+                <li onclick="copiarEnlace1()"><i class="bi bi-link"></i> Copiar enlace</li>
+            </ul>
+        </div>
+
+        <div id="copiedMessage" class="message0-popup">Enlace copiado</div>
+        <div id="menuEmergente2" class="menu-emergente2">
+            <ul>
+                <li onclick="toggleNotificaciones12()"><i class="bi bi-bell"></i> Notificaciones de esta publicación</li>
+                <li onclick="eliminarPublicacion2()"><i class="bi bi-trash"></i> Eliminar</li>
+                <li onclick="editarPublicacion2()"><i class="bi bi-pencil"></i> Editar publicación</li>
+                <li onclick="mostrarPopup()"><i class="bi bi-gear"></i> Editar privacidad</li>
+                <li onclick="copiarEnlace2()"><i class="bi bi-link"></i> Copiar enlace</li>
+            </ul>
+        </div>
+
+        <div id="copiedMessage" class="message0-popup"></div>
+        <div id="menuEmergente3" class="menu-emergente3">
+            <ul>
+                <li onclick="toggleNotificaciones12()"><i class="bi bi-bell"></i> Notificaciones de esta publicación</li>
+                <li onclick="eliminarPublicacion3()"><i class="bi bi-trash"></i> Eliminar</li>
+                <li onclick="editarPublicacion3()"><i class="bi bi-pencil"></i> Editar publicación</li>
+                <li onclick="mostrarPopup()"><i class="bi bi-gear"></i> Editar privacidad</li>
+                <li onclick="copiarEnlace3()"><i class="bi bi-link"></i> Copiar enlace</li>
+            </ul>
+        </div>
+    </div>
+    <div id="popupPrivacidad" class="popup1">
+        <div class="popup1-content">
+            <a href="#" onclick="seleccionarOpcion('publico')"><i class="bi bi-globe icon"></i>  Público</a>
+            <a href="#" onclick="seleccionarOpcion('privado')"><i class="bi bi-lock icon"></i> Privado</a>
+        </div>
+    </div>
+    
+
+
+
+
+    <div class="popup3" id="popupEditar1">
+        <div class="popup3-content">
+            <h2>Editar Publicación</h2>
+            <img id="imagenEditar1" src="" alt="Imagen de la publicación">
+            <input type="text" id="nuevaImagen1" placeholder="Nueva URL de la imagen">
+            <input type="text" id="nuevoPrecio1" placeholder="Nuevo precio">
+            <input type="text" id="nuevaUbicacion1" placeholder="Nueva ubicación">
+            <input type="text" id="nuevaedad1" placeholder="Nueva edad">
+            <input type="text" id="nuevaRaza1" placeholder="Nueva raza">
+            <button onclick="guardarEdicion1()">Guardar</button>
+            <button class="cancel" onclick="cerrarPopup1()">Cancelar</button>
+        </div>
+    </div>
+    
+    <div class="popup3" id="popupEditar2">
+        <div class="popup3-content">
+            <h2>Editar Publicación</h2>
+            <img id="imagenEditar2" src="" alt="Imagen de la publicación">
+            <input type="text" id="nuevaImagen2" placeholder="Nueva URL de la imagen">
+            <input type="text" id="nuevoPrecio2" placeholder="Nuevo precio">
+            <input type="text" id="nuevaUbicacion2" placeholder="Nueva ubicación">
+            <input type="text" id="nuevaedad2" placeholder="Nueva edad">
+            <input type="text" id="nuevaRaza2" placeholder="Nueva raza">
+            <button onclick="guardarEdicion2()">Guardar</button>
+            <button class="cancel" onclick="cerrarPopup2()">Cancelar</button>
+        </div>
+    </div>
+    
+    <div class="popup3" id="popupEditar3">
+        <div class="popup3-content">
+            <h2>Editar Publicación</h2>
+            <img id="imagenEditar3" src="" alt="Imagen de la publicación">
+            <input type="text" id="nuevaImagen3" placeholder="Nueva URL de la imagen">
+            <input type="text" id="nuevoPrecio3" placeholder="Nuevo precio">
+            <input type="text" id="nuevaUbicacion3" placeholder="Nueva ubicación">
+            <input type="text" id="nuevaedad3" placeholder="Nueva edad">
+            <input type="text" id="nuevaRaza3" placeholder="Nueva raza">
+            <button onclick="guardarEdicion3()">Guardar</button>
+            <button class="cancel" onclick="cerrarPopup3()">Cancelar</button>
+        </div>
+    </div>
+
+
+
+    
+    <div id="notificacionActiva" class="notificacion-popup">
+        <img src="Notificaciones/Noti_preview_rev_1.png" alt="Notificaciones activas">
+    </div>
+    <div id="notificacionDesactivada" class="notificacion-popup">
+        <img src="Notificaciones/NotiDesa_preview_rev_1.png" alt="Notificaciones desactivadas">
+    </div>
+    
+
+
+
+
+
+    
+
+
+<script>
+    function toggleMenu1() {
+        var menu1 = document.getElementById("menu1");
+        menu1.style.display = (menu1.style.display == "block") ? "none" : "block";
+    }
+    
+    function editarPublicacion1() {
+        var popup = document.getElementById("popupEditar1");
+        document.getElementById("nuevoPrecio1").value = document.getElementById("precioItem1").innerText.replace("Precio: ", "");
+        document.getElementById("nuevaUbicacion1").value = document.getElementById("ubicacionItem1").innerText.replace("Ubicación: ", "");
+        document.getElementById("nuevaedad1").value = document.getElementById("edadItem1").innerText.replace("Edad: ", "");
+        document.getElementById("nuevaRaza1").value = document.getElementById("razaItem1").innerText.replace("Raza: ", "");
+    
+        // Obtener la ruta de la imagen actual y establecerla en el campo de imagen del popup
+        var imagenActual = document.getElementById("imagenItem1").getAttribute("src");
+        document.getElementById("imagenEditar1").setAttribute("src", imagenActual);
+        document.getElementById("nuevaImagen1").value = imagenActual; 
+    
+        popup.style.display = "block";
+    }
+    
+    function guardarEdicion1() {
+    var nuevaImagen = document.getElementById("nuevaImagen1").value;
+    var nuevoPrecio = document.getElementById("nuevoPrecio1").value;
+    var nuevaUbicacion = document.getElementById("nuevaUbicacion1").value;
+    var nuevaEdad = document.getElementById("nuevaedad1").value; 
+    var nuevaRaza = document.getElementById("nuevaRaza1").value;
+
+    document.getElementById("imagenItem1").src = nuevaImagen; 
+    document.getElementById("precioItem1").innerText = "Precio: " + nuevoPrecio;
+    document.getElementById("ubicacionItem1").innerText = "Ubicación: " + nuevaUbicacion;
+    document.getElementById("edadItem1").innerText = "Edad: " + nuevaEdad; 
+    document.getElementById("razaItem1").innerText = "Raza: " + nuevaRaza;
+
+    cerrarPopup1();
+}
+
+    function cerrarPopup1() {
+        var popup = document.getElementById("popupEditar1");
+        popup.style.display = "none";
+    }
+    
+//  --------------------------------------------------------------------------------------------------------------------------------//
+    function toggleMenu2() {
+        var menu2 = document.getElementById("menu2");
+        menu2.style.display = (menu2.style.display == "block") ? "none" : "block";
+    }
+    
+    function editarPublicacion2() {
+        var popup = document.getElementById("popupEditar2");
+        document.getElementById("nuevoPrecio2").value = document.getElementById("precioItem2").innerText.replace("Precio: ", "");
+        document.getElementById("nuevaUbicacion2").value = document.getElementById("ubicacionItem2").innerText.replace("Ubicación: ", "");
+        document.getElementById("nuevaedad2").value = document.getElementById("edadItem2").innerText.replace("Edad: ", "");
+        document.getElementById("nuevaRaza2").value = document.getElementById("razaItem2").innerText.replace("Raza: ", "");
+    
+        // Obtener la ruta de la imagen actual y establecerla en el campo de imagen del popup
+        var imagenActual = document.getElementById("imagenItem2").getAttribute("src");
+        document.getElementById("imagenEditar2").setAttribute("src", imagenActual);
+        document.getElementById("nuevaImagen2").value = imagenActual; 
+    
+        popup.style.display = "block";
+    }
+    
+
+    function guardarEdicion2() {
+    var nuevaImagen = document.getElementById("nuevaImagen2").value;
+    var nuevoPrecio = document.getElementById("nuevoPrecio2").value;
+    var nuevaUbicacion = document.getElementById("nuevaUbicacion2").value;
+    var nuevaEdad = document.getElementById("nuevaedad2").value;
+    var nuevaRaza = document.getElementById("nuevaRaza2").value;
+
+    document.getElementById("imagenItem2").src = nuevaImagen; 
+    document.getElementById("precioItem2").innerText = "Precio: " + nuevoPrecio;
+    document.getElementById("ubicacionItem2").innerText = "Ubicación: " + nuevaUbicacion;
+    document.getElementById("edadItem2").innerText = "Edad: " + nuevaEdad; 
+    document.getElementById("razaItem2").innerText = "Raza: " + nuevaRaza;
+
+    cerrarPopup2();
+}
+
+    
+    function cerrarPopup2() {
+        var popup = document.getElementById("popupEditar2");
+        popup.style.display = "none";
+    }
+//  --------------------------------------------------------------------------------------------------------------------------------//
+
+    function toggleMenu3() {
+        var menu3 = document.getElementById("menu3");
+        menu3.style.display = (menu3.style.display == "block") ? "none" : "block";
+    }
+    
+    function editarPublicacion3() {
+        var popup = document.getElementById("popupEditar3");
+        document.getElementById("nuevoPrecio3").value = document.getElementById("precioItem3").innerText.replace("Precio: ", "");
+        document.getElementById("nuevaUbicacion3").value = document.getElementById("ubicacionItem3").innerText.replace("Ubicación: ", "");
+        document.getElementById("nuevaedad3").value = document.getElementById("edadItem3").innerText.replace("Edad: ", "");
+        document.getElementById("nuevaRaza3").value = document.getElementById("razaItem3").innerText.replace("Raza: ", "");
+    
+        
+        var imagenActual = document.getElementById("imagenItem3").getAttribute("src");
+        document.getElementById("imagenEditar3").setAttribute("src", imagenActual);
+        document.getElementById("nuevaImagen3").value = imagenActual; 
+    
+        popup.style.display = "block";
+    }
+    
+    function guardarEdicion3() {
+    var nuevaImagen = document.getElementById("nuevaImagen3").value;
+    var nuevoPrecio = document.getElementById("nuevoPrecio3").value;
+    var nuevaUbicacion = document.getElementById("nuevaUbicacion3").value;
+    var nuevaEdad = document.getElementById("nuevaedad3").value;
+    var nuevaRaza = document.getElementById("nuevaRaza3").value;
+
+    document.getElementById("imagenItem3").src = nuevaImagen; 
+    document.getElementById("precioItem3").innerText = "Precio: " + nuevoPrecio;
+    document.getElementById("ubicacionItem3").innerText = "Ubicación: " + nuevaUbicacion;
+    document.getElementById("edadItem3").innerText = "Edad: " + nuevaEdad;
+    document.getElementById("razaItem3").innerText = "Raza: " + nuevaRaza;
+
+    cerrarPopup3();
+}
+
+    
+    function cerrarPopup3() {
+        var popup = document.getElementById("popupEditar3");
+        popup.style.display = "none";
+    }
+    
+
+//  --------------------------------------------------------------------------------------------------------------------------------//
+//  --------------------------------------------------------------------------------------------------------------------------------//
+//  --------------------------------------------------------------------------------------------------------------------------------//   
+  
+   
+         function mostrarPopup() {
+            var popup = document.getElementById("popupPrivacidad");
+            popup.style.display = "flex"; 
+        }
+
+        function ocultarPopup() {
+            var popup = document.getElementById("popupPrivacidad");
+            popup.style.display = "none"; 
+        }
+
+
+        function seleccionarOpcion(opcion) {
+            ocultarPopup(); 
+            
+            
+            if (opcion === 'publico') {
+                
+                console.log("Seleccionado: Público");
+            } else if (opcion === 'privado') {
+                
+                console.log("Seleccionado: Privado");
+            }
+        }
+        
+ //  --------------------------------------------------------------------------------------------------------------------------------//      
+        
+        function copiarEnlace3() {
+
+            var copiedMessage = document.getElementById("copiedMessage");
+            copiedMessage.style.display = "block";
+
+            setTimeout(function() {
+                copiedMessage.style.display = "none";
+            }, 2000);
+        }
+        function copiarEnlace2() {
+
+            var copiedMessage = document.getElementById("copiedMessage");
+            copiedMessage.style.display = "block";
+            
+            setTimeout(function() {
+                copiedMessage.style.display = "none";}, 2000);
+}
+        function copiarEnlace1() {
+
+            var copiedMessage = document.getElementById("copiedMessage");
+            copiedMessage.style.display = "block";
+            
+            setTimeout(function() {
+                copiedMessage.style.display = "none";}, 2000);
+}
+
+ //  --------------------------------------------------------------------------------------------------------------------------------//   
+
+
+//  --------------------------------------------------------------------------------------------------------------------------------//           
+    // Obtener el menu//
+        function toggleMenu1() {
+            var menu = document.getElementById("menuEmergente1");
+            toggleMenu(menu);
+        }
+
+        function toggleMenu2() {
+            var menu = document.getElementById("menuEmergente2");
+            toggleMenu(menu);
+        }
+
+        function toggleMenu3() {
+            var menu = document.getElementById("menuEmergente3");
+            toggleMenu(menu);
+        }
+
+        function toggleMenu(menu) {
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+//  --------------------------------------------------------------------------------------------------------------------------------//   
+
+        function eliminarPublicacion1() {
+            var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta publicación?");
+            if (confirmacion) {
+                var producto = document.querySelector('.product-item:nth-child(1)');
+                producto.parentNode.removeChild(producto);
+    }
+}
+        function eliminarPublicacion2() {
+            var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta publicación?");
+            if (confirmacion) {
+                var producto = document.querySelector('.product-item:nth-child(2)');
+                producto.parentNode.removeChild(producto);
+    }
+}
+
+        function eliminarPublicacion3() {
+            var confirmacion = confirm("¿Estás seguro de que deseas eliminar esta publicación?");
+            if (confirmacion) {
+                var producto = document.querySelector('.product-item:nth-child(3)');
+                producto.parentNode.removeChild(producto);
+    }
+}
+
+//  --------------------------------------------------------------------------------------------------------------------------------//   
+
+    document.addEventListener('DOMContentLoaded', function() {
+       
+        function cerrarTodosLosMenusEmergentes() {
+            var menus = document.querySelectorAll('.chat, .menu-emergente, .menu-emergente2, .menu-emergente3');
+            menus.forEach(function(menu) {
+                menu.style.display = 'none';
+            });
+        }
+
+       
+        var items = document.querySelectorAll('.chat ul li, .menu-emergente ul li, .menu-emergente2 ul li, .menu-emergente3 ul li');
+        items.forEach(function(item) {
+            item.addEventListener('click', function() {
+                cerrarTodosLosMenusEmergentes();
+            });
+        });
+    });
+
+
+//  --------------------------------------------------------------------------------------------------------------------------------//
+
+// Notificaciones Mute y Desmute
+    let notificacionesActivas = true;
+
+    function toggleNotificaciones12() {
+        let notificacionActiva = document.getElementById('notificacionActiva');
+        let notificacionDesactivada = document.getElementById('notificacionDesactivada');
+
+        if (notificacionesActivas) {
+            notificacionDesactivada.classList.add('show-popup');
+            setTimeout(() => {
+                notificacionDesactivada.classList.remove('show-popup');
+            }, 1000);
+        } else {
+            notificacionActiva.classList.add('show-popup');
+            setTimeout(() => {
+                notificacionActiva.classList.remove('show-popup');
+            }, 1000);
+        }
+
+        notificacionesActivas = !notificacionesActivas;
+    }
+</script>
+
+
+
+
+
+</body>
+</html>

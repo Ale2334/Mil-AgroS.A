@@ -1,0 +1,98 @@
+<style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
+}
+
+.card {
+  width: 400px;
+  height: 150px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  display: flex;
+  align-items: center;
+}
+
+.icon-container {
+  width: 50px;
+  height: 50px;
+  background-color: #4CAF50; 
+  color: white;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.hidden {
+  display: none;
+}
+
+.pop-up {
+  animation: pop-up 0.5s ease forwards;
+}
+
+@keyframes pop-up {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+</style>
+    
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enviado</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+  <div class="card hidden" id="Enviado">
+    <div class="message">
+      <div class="icon-container">
+        <i class="fas fa-check"></i>
+      </div>
+      <p>Enviado con éxito</p>
+    </div>
+  </div>
+
+  <script>
+    setTimeout(() => {
+      document.getElementById('Enviado').classList.remove('hidden');
+      document.getElementById('Enviado').classList.add('pop-up');
+    }, 1000);
+  </script>
+
+
+    <script>
+        window.onload = function() {
+            setTimeout(function() {
+                window.location.href = "products.html";
+            }, 2000); 
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<style>
+    /* Estilo para el enlace "Volver" */
+.form-container a {
+    display: inline-block; 
+    margin-left: 30px; 
+    margin-right: 50px; 
+    padding: 8px 28px;
+    border-radius: 20px;
+    line-height: 24px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    background: hsl(227, 11%, 48%);
+    color: #fff;
+    text-decoration: none;
+    transition: color .2s linear, background .3s linear;
+}
+
+.form-container a:hover {
+    color: #2B3044;
+    background: hsla(244, 6%, 45%, 0.678);
+}
+</style>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Informativa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="stinfo.css">
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="LOGO/LOGO MIL-AGRO S.A..jpeg.jpg" alt="Nuestro Logo" style="height: 120px;">
+        </div>
+        <div class="company-name">
+            <h1>Mil - Agro  S.A</h1>
+        </div>
+        <nav>
+            <div class="form-container">
+                <a onclick="history.back()" class="back-link">Volver</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>¿Cual es Nuestro Propósito?</h1>
+        <p>
+            Nuestro propósito es promover un cambio positivo en el ambiente, reducir el consumo de combustibles fósiles y la contaminación por los residuos fecales del ganado, y mejorar la interacción social y económica entre los productores y compradores de ganado.
+        </p>
+    </section>
+
+    <section class="main-content">
+        <div class="info">
+            <h2>Qué Queremos Lograr</h2>
+            <p>
+                Reducir el consumo de combustibles fósiles en el transporte del ganado hasta los lugares de compra y venta.<br>
+                Reducir el maltrato animal al que se ven expuestos los diferentes tipos de ganado cuando este es trasladado y manipulado en los lugares de compra y venta.<br>
+                Reducir el impacto ambiental producido por las descargas de excrementos del ganado, tanto en los lugares de compra y venta como en donde los camiones son lavados después de ser usados para transportar a los animales.<br>
+                Fortalecer la interacción entre productores de las diferentes regiones del país.<br>
+                Mejorar el ingreso económico al núcleo familiar.<br>
+                Reducir el pago de comisiones a intermediarios.
+            </p>
+        </div>
+    </section>
+
+    <section class="more-info">
+        <div class="contact-info">
+            <h2>Más</h2>
+            <p>
+                Nuestra propuesta abarca todas las franjas socioeconómicas del país, desde un pequeño agricultor hasta los grandes ganaderos. Así las cosas, prevé una interacción social entre el vendedor y comprador sin importar su estrato social.
+            </p>
+        </div>
+        <div class="additional-content">
+            <h2>Contacto</h2>
+            <p>Telefono: +506 7122-3910 - WhatsApp: +506 7148-2810 - Correo: milagro.s.ajuniorachiviement@gmail.com </p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 Mil-Agro S.A. Todos los derechos reservados.</p>
+            <p><a href="#">Política de privacidad</a> | <a href="#">Términos y condiciones</a></p>
+        </div>
+    </footer>
+
+    <script src="info.js"></script>
+</body>
+</html>

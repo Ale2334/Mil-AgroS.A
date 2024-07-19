@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de la Vaca</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="stinfosetion.css">
+    <link rel="stylesheet" href="stdetails.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+        
+      
+
+    </head>
+    <body>
+        <div class="info-section">
+            <h2> Guernesey </h2>
+            <p><strong>Nombre Científico:</strong> Bos taurus</p>
+            <p><strong>Nombre Común:</strong> Vaca Guernsey</p>
+            <p><strong>Familia:</strong> Bovidae</p>
+            <p><strong>Características Físicas:</strong></p>
+            <ul>
+                <li><strong>Tamaño:</strong> De tamaño mediano a grande.</li>
+                <li><strong>Peso:</strong> Varía, pero las vacas Guernsey pueden pesar entre 450 kg y 600 kg.</li>
+                <li><strong>Altura:</strong> Alrededor de 1.2 a 1.4 metros en la cruz.</li>
+                <li><strong>Color:</strong> Mayormente de color rojizo a dorado con manchas blancas distintivas en la cara y las extremidades.</li>
+            </ul>
+            <p><strong>Características Adicionales:</strong></p>
+            <ul>
+                <li><strong>Leche:</strong> Conocidas por su alta producción de leche rica en grasa y proteínas, ideal para la producción de lácteos.</li>
+               
+            </ul>
+        </div>
+        
+        
+
+</head>
+<body>
+    <header>
+        <h1>Detalles de la Vaca</h1>
+    </header>
+    <main>
+        <div class="product-details">
+            <div class="carousel">
+                <img src="Vacaguernsey/Vacaguernsey1.jpeg" alt="Vaca 1" class="active">
+                <img src="Vacaguernsey/Vacaguernsey2.jpeg" alt="Vaca 2">
+                <img src="Vacaguernsey/Vacaguernsey3.jpeg" alt="Vaca 3">
+                <a class="prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlide(2)">&#10095;</a>
+            </div>
+            <div class="details">
+                <h3>Vaca Guernesey</h3>
+                <p>Precio: $3,235.29</p>
+                <p>Ubicación: San jose</p>
+                <p>Descripción: vaca lechera muy buena.</p>
+                <p>Edad: 3 años </p>
+                <p>Raza: Guernesey <p>
+                <p>Documentación: <a href="url"> VacadeGuernesey.pdf</a></p>
+                <div id="mi_mapa" style="width: 95%; height: 220px;"></div>
+            </div>
+        </div>
+
+        <!-- Formulario de mensaje -->
+        <div class="form-container">
+            <form>
+                <label for="message">Enviar Mensaje:</label>
+                <textarea id="message" name="message" rows="4" placeholder="Escribe tu mensaje aquí..."></textarea>
+                <button class="Enviar">Enviar</button>
+            </form>
+            <a onclick="history.back()" class="back-link">Volver</a>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+    <script>
+        let map = L.map('mi_mapa').setView([37.21265,-121.88992], 15);
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([37.21265,-121.88992]).addTo(map).bindPopup("Santa Clara");
+
+        let slideIndex = 0;
+
+        function changeSlide(n) {
+            let slides = document.querySelectorAll('.carousel img');
+            slides[slideIndex].classList.remove('active');
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            slides[slideIndex].classList.add('active');
+        }
+    </script>
+</body>
+</html>
+

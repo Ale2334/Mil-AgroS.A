@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    <title>Bandeja de entrada</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-size: 600% 100%;
+            background-color: #53640f ;
+            animation: gradient 16s linear infinite;
+            
+        }
+        @keyframes gradient {
+        0% {
+            background-position: 0%;
+        }
+        100% {
+            background-position: 100%;
+        }
+    }
+        /* parte donde se visualiza el chat */
+        .container {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            width: 130%;
+            max-width: 800px;
+            height: 70vh;
+        }
+        /* tamaño del drawer */
+        .drawer {
+            width: 270px;
+            background: #2c2f33;
+            color: white;
+            overflow: auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .drawer-item {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            border-bottom: 1px solid #23272a;
+        }
+
+        .drawer-item:hover {
+            background: #99aab5;
+        }
+
+        .drawer-item img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+
+        .drawer-item .text {
+            flex: 1;
+        }
+
+        .drawer-item .time {
+            margin-right: 10px;
+        }
+
+        .drawer-item .ellipsis {
+            cursor: pointer;
+        }
+    
+        .main-content {
+            flex: 1;
+            background: hwb(0 70% 28% / 0.37);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #555;
+            
+        }
+        
+        /* Contenido de chat */
+        .chat-content {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+        }
+
+        .chat-message {
+            background: seashell;
+            border: 1px solid hsl(0, 11%, 70%);
+            border-radius: 5px;
+            padding: 10px;
+            margin: 5px 0;
+            width: calc(100% - 20px);
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .chat-message.user {
+            align-self: flex-end;
+            background: #d1e7dd;
+        }
+
+        .chat-header {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        
+
+.close-container {
+    position: absolute;
+    top: 120px;
+    right: 40%;
+}
+
+.close-modal {
+    color: hwb(0 54% 44%);
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.close-modal:hover {
+    color: red; /* Color al pasar el ratón */
+    text-decoration: none;
+    cursor: pointer;
+}
+    </style>
+
+<style>
+.input-container {
+    margin-top: 100px;
+    margin-left: 20%;
+}
+
+#message-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    flex: 1; /* El input ocupa todo el espacio disponible */
+    margin-right: 10px; /* Separación entre el input y el botón */
+}
+
+#send-button {
+    padding: 10px;
+    font-size: 12px;
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+#send-button:hover {
+    background-color: #45a049; /* Color de fondo verde más oscuro al pasar el ratón */
+}
+</style>
+
+<style>
+    /* Barra espaciadora */
+    #chat3 {
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 10px; 
+}
+    #chat4 {
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 10px; 
+}
+.time {
+    color: hsl(140, 1%, 47%); /* Cambia el color del texto a rojo */
+}
+.punto {
+    color: red; 
+    text-decoration: none; 
+}
+</style>
+
+</head>
+<body>
+
+    <button id="openModalBtn">Abrir Bandeja de Entrada</button>   
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="close-container">
+                <a class="close-modal" onclick="window.history.back()"><i class="bi bi-x-circle-fill"></i></a>                <div class="container" id="chatContainer">
+                <div class="drawer">
+                    
+                    <div class="drawer-item" onclick="openChat('chat1')">
+                        <img src="FotoChats/User.png" alt="Avatar">
+                        <div class="text">Mensaje de <strong> Rafa</strong>.</div>
+                        <span class="time">1 hora</span>
+                        <a class="punto">
+                            <i class="bi bi-circle-fill"></i>
+                        </a> 
+                    </div>
+                    <div class="drawer-item" onclick="openChat('chat2')">
+                        <img src="FotoChats/User.png" alt="Avatar">
+                        <div class="text">Mensaje de<strong> Daniel</strong>.</div>
+                        <span class="time">11 horas</span>
+
+                    </div>
+                    <div class="drawer-item" onclick="openChat('chat3')">
+                        <img src="FotoChats/User.png" alt="Avatar">
+                        <div class="text">Mensaje de<strong> Ruben</strong>.</div>
+                        <span class="time"> 1 dia</span>
+
+                    </div>
+                    <div class="drawer-item" onclick="openChat('chat4')">
+                        <img src="FotoChats/User.png" alt="Avatar">
+                        <div class="text">Tienes mensajes nuevos en <strong> Lucas</strong>.</div>
+                        <span class="time" color="red">2 dias</span>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <div class="default-content">
+                    </div>
+                    <div id="chat1" class="chat-content">
+                        <div class="chat-header">Chat: Don Rafa </div>
+                        <div class="chat-message">Hola, Todavia tiene en venta La vaca?</div>
+                        <div class="chat-message"><img src="Vacajersey/CardJesey.jpg" style="width: 70%; height: 250px; "></div> 
+                        <div class="input-container">
+                            <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+                            <button id="send-button">Enviar</button>
+                        </div>                        
+                    </div>
+                    
+                    <div id="chat2" class="chat-content">
+                        <div class="chat-header">Chat: Daniel cuña</div>
+                        <div class="chat-message">No tiene Crias de esta Vaca, para que me venda?</div>
+                        <div class="chat-message"><img src="Vacaholstein/VacaholsteinCard.jpeg" style="width: 70%; height: 250px; "></div> 
+                        <div class="input-container">
+                            <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+                            <button id="send-button">Enviar</button>
+                        </div> 
+                    </div>
+                    <div id="chat3" class="chat-content">
+                        <div class="chat-header">Chat: Ruben zuñiga</div>
+                        <div class="chat-message">Amigo No hace intercambios?</div>
+                        <div class="chat-message">Tengo un Toro no se si lo quiere venir a ver..</div>
+                        <div class="chat-message"><img src="FotoChats/Torocriollo.jpeg" style="width: 70%; height: 250px; "></div> 
+                        <div class="chat-message user">Que raza es?</div>
+                        <div class="chat-message">El es un toro Criollo</div>
+                        <div class="input-container">
+                            <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+                            <button id="send-button">Enviar</button>
+                        </div> 
+                    </div>
+                    <div id="chat4" class="chat-content">
+                        <div class="chat-header">Chat: Lucas Valverde</div>
+                        <div class="chat-message">Todo bien, me interesa mucho este toro</div>
+                        <div class="chat-message"><img src="ToroPedigreeNegro/PedigreeCard.jpeg" style="width: 70%; height: 250px; "></div> 
+                        <div class="chat-message">¿No me lo deja mas barato?</div>
+                        <div class="input-container">
+                            <input type="text" id="message-input" placeholder="Escribe tu mensaje...">
+                            <button id="send-button">Enviar</button>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Obtén el modal
+        var modal = document.getElementById("myModal");
+
+        // Obtén el botón que abre el modal
+        var btn = document.getElementById("openModalBtn");
+
+        // Obtén el elemento <span> que cierra el modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // Cuando el usuario hace clic en el botón, abre el modal
+        btn.onclick = function() {
+            modal.style.display = "flex";
+        }
+
+
+
+
+        // Función para abrir un chat específico
+        function openChat(chatId) {
+            var chats = document.getElementsByClassName('chat-content');
+            for (var i = 0; i < chats.length; i++) {
+                chats[i].style.display = 'none';
+            }
+            document.getElementById(chatId).style.display = 'flex';
+            
+        }
+        function closeModal() {
+        var modal = document.getElementById('myModal');
+        modal.style.display = 'none';
+             }
+
+    </script>
+     <script>
+        // Script para abrir el modal
+        document.getElementById("openModalBtn").addEventListener("click", function() {
+            document.getElementById("myModal").style.display = "block";
+        });
+
+        // Script para cerrar el modal
+        function closeModal() {
+            document.getElementById("myModal").style.display = "none";
+        }
+
+        // Script para abrir chats específicos
+        function openChat(chatId) {
+            var chats = document.querySelectorAll('.chat-content');
+            chats.forEach(function(chat) {
+                chat.style.display = 'none';
+            });
+
+            var selectedChat = document.getElementById(chatId);
+            if (selectedChat) {
+                selectedChat.style.display = 'flex';
+            }
+        }
+
+        // Script para enviar mensajes en cada chat
+        document.getElementById("send-button-1").addEventListener("click", function() {
+            var message = document.getElementById("message-input-1").value;
+            var chatContent = document.getElementById("chat1");
+            if (message) {
+                var newMessage = document.createElement("div");
+                newMessage.classList.add("chat-message", "user");
+                newMessage.textContent = message;
+                chatContent.insertBefore(newMessage, chatContent.querySelector('.input-container'));
+                document.getElementById("message-input-1").value = '';
+            }
+        });
+
+        document.getElementById("send-button-2").addEventListener("click", function() {
+            var message = document.getElementById("message-input-2").value;
+            var chatContent = document.getElementById("chat2");
+            if (message) {
+                var newMessage = document.createElement("div");
+                newMessage.classList.add("chat-message", "user");
+                newMessage.textContent = message;
+                chatContent.insertBefore(newMessage, chatContent.querySelector('.input-container'));
+                document.getElementById("message-input-2").value = '';
+            }
+        });
+
+        document.getElementById("send-button-3").addEventListener("click", function() {
+            var message = document.getElementById("message-input-3").value;
+            var chatContent = document.getElementById("chat3");
+            if (message) {
+                var newMessage = document.createElement("div");
+                newMessage.classList.add("chat-message", "user");
+                newMessage.textContent = message;
+                chatContent.insertBefore(newMessage, chatContent.querySelector('.input-container'));
+                document.getElementById("message-input-3").value = '';
+            }
+        });
+
+        document.getElementById("send-button-4").addEventListener("click", function() {
+            var message = document.getElementById("message-input-4").value;
+            var chatContent = document.getElementById("chat4");
+            if (message) {
+                var newMessage = document.createElement("div");
+                newMessage.classList.add("chat-message", "user");
+                newMessage.textContent = message;
+                chatContent.insertBefore(newMessage, chatContent.querySelector('.input-container'));
+                document.getElementById("message-input-4").value = '';
+            }
+        });
+
+        // Script para el botón "Vendido"
+        document.getElementById("Vendido-btn").addEventListener("click", function() {
+            alert("¡La vaca ha sido vendida!");
+            closeModal();
+        });
+    </script>
+    
+
+</body>
+</html>
